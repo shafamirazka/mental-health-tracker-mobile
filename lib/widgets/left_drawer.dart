@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_tracker/screens/menu.dart';
-// TODO: Impor halaman MoodEntryFormPage jika sudah dibuat
 import 'package:mental_health_tracker/screens/moodentry_form.dart';
+import 'package:mental_health_tracker/screens/list_moodentry.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -28,12 +28,13 @@ class LeftDrawer extends StatelessWidget {
                 ),
                 Padding(padding: EdgeInsets.all(8)),
                 Text(
-                  "Ayo jaga kesehatan mentalmu setiap hari disini!",
-                  textAlign: TextAlign.center, // Align text to the center
+                  "Ayo jaga kesehatan mentalmu setiap hari di sini!",
+                  // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+                  textAlign: TextAlign.center, // Center alignment
                   style: TextStyle(
-                    fontSize: 15, // Set font size to 15
-                    color: Colors.white, // Set text color to white
-                    fontWeight: FontWeight.normal, // Set font weight to normal
+                    fontSize: 15, // Ukuran font 15
+                    color: Colors.white, // Warna teks putih
+                    fontWeight: FontWeight.normal, // Weight biasa (normal)
                   ),
                 ),
               ],
@@ -61,6 +62,17 @@ class LeftDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => MoodEntryFormPage(),
                   ));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Daftar Mood'),
+            onTap: () {
+              // Route menu ke halaman mood
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MoodEntryPage()),
+              );
             },
           ),
         ],
